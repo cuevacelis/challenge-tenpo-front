@@ -26,31 +26,31 @@ function LoginPage() {
 			description="Ingresa a tu cuenta usando tu correo institucional"
 			className="min-h-screen grid lg:grid-cols-2 bg-gray-100 p-0 dark:bg-gray-900 m-0"
 		>
-			<div className="flex flex-col gap-4 p-6 md:p-10">
+			<section className="flex flex-col gap-4 p-6 md:p-10">
 				<div className="flex justify-center gap-2 md:justify-start">
 					<Link to="/" className="flex items-center gap-2 font-medium">
-						<div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
-							<Image
-								src={logo}
-								alt="Logo"
-								className="h-full object-contain"
-								layout="fullWidth"
-							/>
-						</div>
+						<Image
+							width={40}
+							height={40}
+							src={logo}
+							alt="Logo"
+							layout="constrained"
+						/>
 						Tenpo
 					</Link>
 				</div>
+
 				<div className="flex flex-1 items-center justify-center">
-					<div className="w-full max-w-xs">
+					<div className="w-full max-w-sm">
 						<LoginForm />
 					</div>
 				</div>
-			</div>
+			</section>
 			<div className="relative hidden lg:block">
 				<Image
 					src={imagePhone}
 					alt="Phone"
-					className="object-contain max-h-screen w-full"
+					className="object-contain max-h-screen w-full p-10"
 					layout="fullWidth"
 				/>
 			</div>

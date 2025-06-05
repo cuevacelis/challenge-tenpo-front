@@ -1,7 +1,7 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Particles } from "../magicui/particles";
-import { LayersIcon } from "lucide-react";
+import { Landmark } from "lucide-react";
 
 interface PageLoadingProps {
 	message?: string;
@@ -28,16 +28,16 @@ export default function PageLoading({
 
 	return (
 		<section
-			className="fixed inset-0 flex items-center justify-center z-50 bg-muted"
+			className="fixed inset-0 flex items-center justify-center z-50 bg-muted dark:bg-black"
 			role="alertdialog"
 			aria-modal="true"
 			aria-label="Cargando página"
 		>
 			<section className="max-w-2xl shadow-xl text-center flex flex-col items-center justify-center">
-				<LayersIcon className="size-24 text-primary" />
-				<h1 className="text-2xl md:text-4xl mt-4">{message}</h1>
-				<p className="text-lg text-muted-foreground mt-2">
-					Espere un momento mientras cargamos la página
+				<Landmark className="size-24 text-primary animate-pulse" />
+				<h1 className="text-xl md:text-2xl mt-4">{message}</h1>
+				<p className="text-sm text-muted-foreground mt-2">
+					Espere un momento mientras cargamos la página...
 				</p>
 			</section>
 			<Particles
