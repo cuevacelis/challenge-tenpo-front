@@ -1,54 +1,81 @@
-# React + TypeScript + Vite
+# Challenge Tenpo Front
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación web construida con React, TypeScript y Vite.
 
-Currently, two official plugins are available:
+## Requisitos previos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js >= 18.x
+- pnpm >= 8.x (recomendado para manejar dependencias)
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clona el repositorio:
+   ```bash
+   git clone <url-del-repositorio>
+   cd challenge-tenpo-front
+   ```
+2. Instala las dependencias:
+   ```bash
+   pnpm install
+   ```
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Scripts disponibles
+
+- **Desarrollo:**
+  ```bash
+  pnpm dev
+  ```
+  Inicia el servidor de desarrollo en `http://localhost:5173` (por defecto).
+
+- **Build producción:**
+  ```bash
+  pnpm build
+  ```
+  Genera la versión optimizada en la carpeta `dist/`.
+
+- **Previsualización del build:**
+  ```bash
+  pnpm preview
+  ```
+  Sirve localmente el build de producción.
+
+- **Lint:**
+  ```bash
+  pnpm lint
+  ```
+  Ejecuta las reglas de linting configuradas.
+
+## Estructura del proyecto
+
+```
+challenge-tenpo-front/
+  public/                # Archivos estáticos
+  src/                   # Código fuente principal
+    assets/              # Imágenes y recursos
+    components/          # Componentes reutilizables
+    context/             # Contextos de React
+    hooks/               # Custom hooks
+    lib/                 # Librerías y utilidades
+    routes/              # Rutas y páginas
+    styles/              # Estilos globales
+  package.json           # Configuración de dependencias y scripts
+  vite.config.ts         # Configuración de Vite
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Linting y convenciones
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- El proyecto utiliza ESLint y Biome para mantener la calidad del código.
+- Sigue las convenciones de commit descritas en `git-conventions.mdc`.
+- Para aplicar el linting automáticamente:
+  ```bash
+  pnpm lint:fix
+  ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Notas adicionales
+
+- Puedes personalizar la configuración de ESLint en `eslint.config.js`.
+- Para más detalles sobre la estructura o contribución, revisa los comentarios en el código y la documentación interna.
+
+---
+
+Si tienes dudas, contacta al equipo de desarrollo o revisa la documentación interna del proyecto.
