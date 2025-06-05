@@ -29,7 +29,6 @@ function RouteComponent() {
 		},
 	});
 
-	// Función para manejar cambio de categoría
 	const handleCategoryChange = (categoryId: string) => {
 		setSelectedCategory(categoryId);
 	};
@@ -38,7 +37,6 @@ function RouteComponent() {
 		<Page title="Beneficios" className="p-4 lg:p-8">
 			<QueryStatusHandler queries={[categoriesQuery]}>
 				<div className="max-w-6xl mx-auto">
-					{/* Header */}
 					<div className="mb-8 lg:pt-0">
 						<h1 className="text-3xl font-bold mb-2">Beneficios Tenpo</h1>
 						<p className="text-gray-400">
@@ -46,21 +44,18 @@ function RouteComponent() {
 						</p>
 					</div>
 
-					{/* Stats */}
 					<BenefitsStats
 						totalBenefits={benefitsQuery.data?.pages?.[0]?.totalBenefits ?? 0}
 						monthlySavings={benefitsQuery.data?.pages?.[0]?.monthlySavings ?? 0}
 						usedBenefits={benefitsQuery.data?.pages?.[0]?.usedBenefits ?? 0}
 					/>
 
-					{/* Categories */}
 					<BenefitsCategories
 						categories={categoriesQuery.data?.categories ?? []}
 						selectedCategory={selectedCategory}
 						onCategoryChange={handleCategoryChange}
 					/>
 					<QueryStatusHandler queries={[benefitsQuery]} hideLoadingModal>
-						{/* Benefits Grid */}
 						{benefitsQuery.data?.pages?.some(
 							(page) => page.benefits?.length > 0,
 						) && (
@@ -75,7 +70,6 @@ function RouteComponent() {
 							</div>
 						)}
 
-						{/* Load More Button */}
 						{benefitsQuery.hasNextPage && (
 							<div className="mt-8 flex justify-center">
 								<Button
@@ -96,7 +90,6 @@ function RouteComponent() {
 							</div>
 						)}
 
-						{/* Empty State */}
 						{!benefitsQuery.data?.pages?.[0]?.benefits?.length && (
 							<BenefitsEmptyState
 								selectedCategory={selectedCategory}
