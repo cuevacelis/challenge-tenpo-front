@@ -7,7 +7,7 @@ import {
 	DialogHeader,
 	DialogTitle,
 } from "@/components/ui/dialog";
-import { ShieldUser } from "lucide-react";
+import { Shield } from "lucide-react";
 
 interface ILoadingProgressModalProps {
 	isPending: boolean;
@@ -32,7 +32,21 @@ export function LoadingProgressModal({
 
 				<section className="flex flex-col items-center justify-center space-y-4">
 					<BlurFade delay={0.1} duration={0.6}>
-						<ShieldUser className="size-12 text-primary" />
+						{/* Icono animado */}
+						<section className="relative">
+							<div
+								className={
+									"absolute inset-0 rounded-full animate-ping opacity-20 bg-primary"
+								}
+							/>
+							<div
+								className={
+									"relative p-4 rounded-full bg-gradient-to-br from-background to-muted border-2 shadow-lg"
+								}
+							>
+								<Shield className={"size-8 text-primary"} />
+							</div>
+						</section>
 					</BlurFade>
 
 					{isAuthSuccess ? (
