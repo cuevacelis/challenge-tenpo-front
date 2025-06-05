@@ -12,7 +12,7 @@ export default function BalanceCard({ totalBalance }: BalanceCardProps) {
 	const [showBalance, setShowBalance] = useState(true);
 
 	return (
-		<CardPrimary>
+		<CardPrimary className="mb-8">
 			<CardPrimaryContent>
 				<div className="flex items-center justify-between mb-4">
 					<div>

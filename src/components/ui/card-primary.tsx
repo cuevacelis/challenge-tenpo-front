@@ -10,7 +10,7 @@ export function CardPrimary({ children, className }: CardPrimaryProps) {
 	return (
 		<Card
 			className={cn(
-				"mb-8 bg-gradient-to-r from-tenpo-green to-emerald-400 border-0 text-tenpo-dark",
+				"bg-gradient-to-r from-tenpo-green to-emerald-400 border-0 text-tenpo-dark",
 				className,
 			)}
 		>

@@ -55,7 +55,7 @@ export default function StatsGrid({
 				</CardSecondaryContent>
 			</CardSecondary>
 
-			<CardSecondary className="bg-white/5 border-white/10">
+			<CardSecondary>
 				<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 					<CardTitle className="text-sm font-medium text-gray-400">
 						Gastos del mes
@@ -76,7 +76,7 @@ export default function StatsGrid({
 				</CardSecondaryContent>
 			</CardSecondary>
 
-			<CardSecondary className="bg-white/5 border-white/10">
+			<CardSecondary>
 				<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 					<CardTitle className="text-sm font-medium text-gray-400">
 						Tarjeta de crédito
