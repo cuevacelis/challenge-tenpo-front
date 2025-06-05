@@ -4,7 +4,6 @@ import {
 	SidebarMenu,
 	SidebarMenuButton,
 	SidebarMenuItem,
-	useSidebar,
 } from "@/components/ui/sidebar";
 import type { IDataUrlsLogged } from "../services/query/data-fake-urls.query";
 import { DynamicIcon } from "lucide-react/dynamic";
