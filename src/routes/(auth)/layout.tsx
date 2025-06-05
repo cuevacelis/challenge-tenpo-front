@@ -12,7 +12,7 @@ import { Outlet, createFileRoute, redirect } from "@tanstack/react-router";
  * Handles authentication and permission checks before loading the route.
  */
 export const Route = createFileRoute("/(auth)")({
-	beforeLoad: async ({ context, location }) => {
+	beforeLoad: ({ context, location }) => {
 		// Check authentication first
 		if (!context.auth.isAuthenticated) {
 			throw redirect({
