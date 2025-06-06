@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { handleAxiosError } from "@/lib/api/utils";
 import { useMutation } from "@tanstack/react-query";
 
@@ -37,6 +38,7 @@ const getAuthTokenFakeFetch = async (_params: LoginParams) => {
 const getUserDataFakeFetch = async (
 	_token: string,
 ): Promise<LoginResponseUser> => {
+	await new Promise((resolve) => setTimeout(resolve, 1000));
 	return {
 		codigo: 200,
 		mensaje: "Login exitoso",

@@ -6,13 +6,14 @@ interface CardSecondaryProps extends React.ComponentProps<"div"> {
 	className?: string;
 }
 
-export function CardSecondary({ children, className }: CardSecondaryProps) {
+export function CardSecondary({ children, className, ...props }: CardSecondaryProps) {
 	return (
 		<Card
 			className={cn(
 				"bg-white/5 border-white/10 dark:bg-dark-100 dark:border-dark-200",
 				className,
 			)}
+			{...props}
 		>
 			{children}
 		</Card>
@@ -22,9 +23,10 @@ export function CardSecondary({ children, className }: CardSecondaryProps) {
 export function CardSecondaryContent({
 	children,
 	className,
+	...props
 }: React.ComponentProps<"div">) {
 	return (
-		<CardContent className={cn(className)}>
+		<CardContent className={cn(className)} {...props}>
 			{children}
 		</CardContent>
 	);
